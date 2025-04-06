@@ -1,1 +1,4 @@
-* * * * * /opt/adaptivefancontrol.sh
+# This crontab entry is for backup purposes only
+# The main script runs in a continuous loop with its own interval
+# This entry will restart the script if it crashes for any reason
+*/15 * * * * pgrep -f adaptivefancontrol.sh >/dev/null || /opt/adaptivefancontrol.sh
