@@ -18,8 +18,8 @@ Docker image that will adjust fan speed based on the exhaust temperature. This p
 ```yml
 version: '3'
 services:
-  dell-idrac-fancontrol:
-    image: pdiddy973/dell-idrac-fancontrol:latest
+  dellfan:
+    image: ghcr.io/ericcug/dell-fan-control:latest
     container_name: dell-idrac-fancontrol
     restart: unless-stopped
     environment:
