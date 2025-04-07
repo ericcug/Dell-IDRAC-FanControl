@@ -57,7 +57,7 @@ get_temp() {
     fi
     
     # Parse the compact output to find the maximum temperature
-    max_temp=$(echo "$temp" | awk -F',' '{gsub(/[^0-9.]/,"",$4); if($4+0>max+0) max=$4} END{print max}')
+    max_temp=$(echo "$temp" awk -F"|" '{split($5,a," "); if(a[1]>max) max=a[1]} END{print max}')
     
     if [ -z "$max_temp" ] || [ "$max_temp" = "0" ]; then
         log "error" "Failed to parse temperature data"
